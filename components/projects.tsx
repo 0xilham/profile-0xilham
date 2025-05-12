@@ -1,0 +1,174 @@
+"use client"
+
+import { useState } from "react"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { ExternalLink, Github, Code } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+
+export default function Projects() {
+  const [activeTab, setActiveTab] = useState("all")
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
+
+  const projects = [
+    {
+      title: "Climate Change dApp",
+      description:
+        "A decentralized application focused on climate change awareness and action, built using Web3 technologies.",
+      image: "/placeholder.svg?height=300&width=600",
+      tags: ["Web3", "Next.js", "Solidity", "Ethereum", "Tailwind CSS"],
+      demoLink: "#",
+      codeLink: "#",
+      category: "web3",
+    },
+    {
+      title: "Rainfall Prediction Model",
+      description: "An AI model using Long Short-Term Memory (LSTM) to improve rainfall prediction accuracy.",
+      image: "/placeholder.svg?height=300&width=600",
+      tags: ["AI", "LSTM", "Python", "Data Science", "Weather Forecasting"],
+      demoLink: "#",
+      codeLink: "#",
+      category: "ai",
+    },
+    {
+      title: "Adventure Quest Game",
+      description: "A 2D adventure game developed with Unity, featuring dynamic gameplay and immersive storytelling.",
+      image: "/placeholder.svg?height=300&width=600",
+      tags: ["Unity", "C#", "Game Development", "2D Graphics", "Animation"],
+      demoLink: "#",
+      codeLink: "#",
+      category: "game",
+    },
+    {
+      title: "E-Commerce Platform",
+      description:
+        "A full-featured e-commerce website with user authentication, product catalog, and payment integration.",
+      image: "/placeholder.svg?height=300&width=600",
+      tags: ["Next.js", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
+      demoLink: "#",
+      codeLink: "#",
+      category: "web",
+    },
+    {
+      title: "Smart Contract Wallet",
+      description:
+        "A secure cryptocurrency wallet with smart contract integration for enhanced security and functionality.",
+      image: "/placeholder.svg?height=300&width=600",
+      tags: ["Web3", "Solidity", "React", "Ethereum", "Hardhat"],
+      demoLink: "#",
+      codeLink: "#",
+      category: "web3",
+    },
+    {
+      title: "Mobile Weather App",
+      description: "A weather application for Android with location-based services and real-time weather updates.",
+      image: "/placeholder.svg?height=300&width=600",
+      tags: ["Java", "Android", "SQLite", "API Integration", "GPS"],
+      demoLink: "#",
+      codeLink: "#",
+      category: "mobile",
+    },
+  ]
+
+  const filteredProjects = activeTab === "all" ? projects : projects.filter((project) => project.category === activeTab)
+
+  return (
+    <section id="projects" className="py-16 md:py-24">
+      <div className="section-container">
+        <h2 className="section-title">Projects</h2>
+
+        <Tabs defaultValue="all" className="max-w-5xl mx-auto" onValueChange={setActiveTab}>
+          <div className="flex justify-center mb-8">
+            <TabsList>
+              <TabsTrigger value="all" className="px-4">
+                All
+              </TabsTrigger>
+              <TabsTrigger value="web3" className="px-4">
+                Web3
+              </TabsTrigger>
+              <TabsTrigger value="web" className="px-4">
+                Web
+              </TabsTrigger>
+              <TabsTrigger value="game" className="px-4">
+                Game Dev
+              </TabsTrigger>
+              <TabsTrigger value="mobile" className="px-4">
+                Mobile
+              </TabsTrigger>
+              <TabsTrigger value="ai" className="px-4">
+                AI/ML
+              </TabsTrigger>
+            </TabsList>
+          </div>
+
+          <TabsContent value={activeTab} ref={ref}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredProjects.map((project, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Card className="overflow-hidden h-full flex flex-col card-hover">
+                    <div className="relative h-48 overflow-hidden">
+                      <Image
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-300 hover:scale-105"
+                      />
+                    </div>
+                    <CardContent className="pt-6 flex-grow">
+                      <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag, i) => (
+                          <Badge key={i} variant="secondary" className="text-xs">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                    <CardFooter className="border-t pt-4">
+                      <div className="flex space-x-2 w-full">
+                        <Button variant="outline" size="sm" className="flex-1">
+                          <Link href={project.demoLink} className="flex items-center justify-center w-full">
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            Demo
+                          </Link>
+                        </Button>
+                        <Button variant="outline" size="sm" className="flex-1">
+                          <Link href={project.codeLink} className="flex items-center justify-center w-full">
+                            <Github className="h-4 w-4 mr-2" />
+                            Code
+                          </Link>
+                        </Button>
+                      </div>
+                    </CardFooter>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
+
+        <div className="text-center mt-12">
+          <Button>
+            <Link href="#" className="flex items-center">
+              <Code className="h-4 w-4 mr-2" /> View All Projects
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}
