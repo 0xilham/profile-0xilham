@@ -11,7 +11,7 @@ import { motion } from "framer-motion"
 
 export default function Hero() {
   const [typedText, setTypedText] = useState("")
-  const fullText = "Web3 & Game Developer"
+  const fullText = "Web3 Developer & Game Developer"
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
@@ -68,21 +68,61 @@ export default function Hero() {
                   View Projects <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button variant="outline">
-                <Download className="mr-2 h-4 w-4" /> Download CV
-              </Button>
+                <Button variant="outline">
+                <Link
+                  href="/CV_Ilham Nur Hermawan.pdf"
+                  className="flex items-center gap-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Download className="mr-2 h-4 w-4" /> Download CV
+                </Link>
+                </Button>
             </div>
 
             <div className="flex space-x-4 pt-2">
-              <Button variant="ghost" size="icon" className="rounded-full">
-                <Github className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="rounded-full">
-                <Linkedin className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="rounded-full">
-                <Mail className="h-5 w-5" />
-              </Button>
+                <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full"
+                asChild
+                >
+                <Link
+                  href="https://github.com/0xilham"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="h-5 w-5" />
+                </Link>
+                </Button>
+                <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full"
+                asChild
+                >
+                <Link
+                  href="https://linkedin.com/in/ilham-nur-hermawan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </Link>
+                </Button>
+                <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full"
+                asChild
+                >
+                <Link
+                  href="mailto:ilhamnurhermawan@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Mail className="h-5 w-5" />
+                </Link>
+                </Button>
             </div>
           </motion.div>
 
