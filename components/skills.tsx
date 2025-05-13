@@ -15,12 +15,15 @@ export default function Skills() {
       category: "Programming & Frameworks",
       icon: <Code className="h-5 w-5" />,
       skills: [
+        "PHP",
         "JavaScript",
+        "Python",
         "C#",
         "Java",
-        "PHP",
         "HTML",
         "CSS",
+        "Laravel",
+        "React",
         "Node.js",
         "Next.js",
         "Tailwind CSS",
@@ -97,36 +100,36 @@ export default function Skills() {
             </TabsList>
           </div>
 
-            <TabsContent value="hard" className="space-y-8 px-4 md:px-12">
+          <TabsContent value="hard" className="space-y-8 px-4 md:px-12">
             <div className="grid md:grid-cols-2 gap-6">
               {hardSkills.map((category, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-              >
-                <Card>
-                <CardHeader className="pb-2">
-                  <CardTitle className="flex items-center gap-2 text-lg">
-                  {category.icon}
-                  {category.category}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, i) => (
-                    <Badge key={i} variant="secondary" className="text-sm">
-                    {skill}
-                    </Badge>
-                  ))}
-                  </div>
-                </CardContent>
-                </Card>
-              </motion.div>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                >
+                  <Card>
+                    <CardHeader className="pb-2">
+                      <CardTitle className="flex items-center gap-2 text-lg">
+                        {category.icon}
+                        {category.category}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex flex-wrap gap-2">
+                        {category.skills.map((skill, i) => (
+                          <Badge key={i} variant="secondary" className="text-sm">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               ))}
             </div>
-            </TabsContent>
+          </TabsContent>
 
           <TabsContent value="soft" className="space-y-8 px-4 md:px-12">
             <Card>
