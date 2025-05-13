@@ -66,7 +66,7 @@ export default function Hero() {
                 Hi, I'm <span className="gradient-text">Ilham Nur Hermawan</span>
               </h1>
               <h2 className="text-xl md:text-2xl font-medium text-gray-700 dark:text-gray-300 h-8">
-                {typedText}
+                I'm a {typedText}
                 <span className="animate-pulse">|</span>
               </h2>
             </div>
