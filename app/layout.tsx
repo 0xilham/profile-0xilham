@@ -13,8 +13,7 @@ const poppins = Poppins({
 
 export const metadata = {
   title: "Ilham Nur Hermawan | Portfolio",
-  description: "Web3 & Game Developer Portfolio",
-    generator: 'v0.dev'
+  description: "Web3 & Game Developer Portfolio"
 }
 
 export default function RootLayout({
