@@ -32,10 +32,10 @@ export default function Projects() {
     {
       title: "Optimization Rainfall Prediction Model - AI",
       description: "An AI model using Long Short-Term Memory (LSTM) to improve rainfall prediction accuracy.",
-      image: "/placeholder.svg?height=300&width=600",
+      image: "https://miro.medium.com/v2/resize:fit:4800/format:webp/0*RdrAGOU-oD33glk7",
       tags: ["AI", "LSTM", "Python", "Data Science", "Weather Forecasting"],
       demoLink: "https://medikom.iocspublisher.org/index.php/JTI/article/view/942",
-      codeLink: "https://medikom.iocspublisher.org/index.php/JTI/article/view/942",
+      codeLink: "https://medikom.iocspublisher.org/index.php/JTI/article/view/942/87",
       category: "ai",
     },
     {
