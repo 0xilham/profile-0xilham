@@ -68,12 +68,17 @@ export default function Header() {
       </header>
 
       {/* Mobile Bottom Navigation */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-gray-950 shadow-[0_-2px_10px_rgba(0,0,0,0.1)] dark:shadow-[0_-2px_10px_rgba(255,255,255,0.05)]">
-        <div className="flex justify-between items-center px-2 py-2">
-          <Link
-            href="#home"
-            className="flex flex-col items-center justify-center p-2 w-1/6 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-          >
+      <div className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[400px]">
+        {/* Floating Action Button (Mode Toggle) */}
+        <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
+          <div className="bg-primary rounded-full p-2 shadow-lg">
+            <ModeToggle className="text-white" />
+          </div>
+        </div>
+
+        {/* Navigation Bar */}
+        <div className="bg-gray-900 dark:bg-gray-900 rounded-full shadow-lg flex justify-between items-center px-8 py-3">
+          <Link href="#home" className="flex flex-col items-center justify-center text-gray-300 hover:text-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -84,18 +89,13 @@ export default function Header() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="mb-1"
             >
               <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
               <polyline points="9 22 9 12 15 12 15 22"></polyline>
             </svg>
-            <span className="text-xs">Home</span>
           </Link>
 
-          <Link
-            href="#experience"
-            className="flex flex-col items-center justify-center p-2 w-1/6 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-          >
+          <Link href="#projects" className="flex flex-col items-center justify-center text-gray-300 hover:text-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -106,18 +106,19 @@ export default function Header() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="mb-1"
             >
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              <path d="M21 15V6"></path>
+              <path d="M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"></path>
+              <path d="M12 12H3"></path>
+              <path d="M16 6H3"></path>
+              <path d="M12 18H3"></path>
             </svg>
-            <span className="text-xs">Work</span>
           </Link>
 
-          <Link
-            href="#skills"
-            className="flex flex-col items-center justify-center p-2 w-1/6 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-          >
+          {/* Empty space for the center button */}
+          <div className="w-10"></div>
+
+          <Link href="#skills" className="flex flex-col items-center justify-center text-gray-300 hover:text-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -128,7 +129,6 @@ export default function Header() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="mb-1"
             >
               <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"></path>
               <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path>
@@ -140,18 +140,10 @@ export default function Header() {
               <path d="m3.34 7 1.73 1"></path>
               <path d="M14 12h8"></path>
               <path d="M2 12h2"></path>
-              <path d="m20.66 7-1.73 1"></path>
-              <path d="m3.34 17 1.73-1"></path>
-              <path d="m17 3.34-1 1.73"></path>
-              <path d="m7 20.66 1-1.73"></path>
             </svg>
-            <span className="text-xs">Skills</span>
           </Link>
 
-          <Link
-            href="#projects"
-            className="flex flex-col items-center justify-center p-2 w-1/6 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-          >
+          <Link href="#contact" className="flex flex-col items-center justify-center text-gray-300 hover:text-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -162,37 +154,10 @@ export default function Header() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="mb-1"
-            >
-              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-            </svg>
-            <span className="text-xs">Projects</span>
-          </Link>
-
-          <Link
-            href="#contact"
-            className="flex flex-col items-center justify-center p-2 w-1/6 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="mb-1"
             >
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
-            <span className="text-xs">Contact</span>
           </Link>
-
-          <div className="flex flex-col items-center justify-center p-2 w-1/6">
-            <ModeToggle />
-          </div>
         </div>
       </div>
     </>
