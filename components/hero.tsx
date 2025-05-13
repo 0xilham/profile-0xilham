@@ -11,19 +11,33 @@ import { motion } from "framer-motion"
 
 export default function Hero() {
   const [typedText, setTypedText] = useState("")
-  const fullText = "Web3 Developer & Game Developer"
+  const texts = ["Web3 Developer", "Game Developer"]
   const [index, setIndex] = useState(0)
+  const [charIndex, setCharIndex] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
 
   useEffect(() => {
-    if (index < fullText.length) {
+    const currentText = texts[index]
+    if (!isDeleting && charIndex < currentText.length) {
       const timeout = setTimeout(() => {
-        setTypedText((prevText) => prevText + fullText[index])
-        setIndex((prevIndex) => prevIndex + 1)
+        setTypedText((prevText) => prevText + currentText[charIndex])
+        setCharIndex((prevCharIndex) => prevCharIndex + 1)
       }, 100)
-
       return () => clearTimeout(timeout)
+    } else if (isDeleting && charIndex > 0) {
+      const timeout = setTimeout(() => {
+        setTypedText((prevText) => prevText.slice(0, -1))
+        setCharIndex((prevCharIndex) => prevCharIndex - 1)
+      }, 50)
+      return () => clearTimeout(timeout)
+    } else if (!isDeleting && charIndex === currentText.length) {
+      const timeout = setTimeout(() => setIsDeleting(true), 1000)
+      return () => clearTimeout(timeout)
+    } else if (isDeleting && charIndex === 0) {
+      setIsDeleting(false)
+      setIndex((prevIndex) => (prevIndex + 1) % texts.length)
     }
-  }, [index])
+  }, [charIndex, isDeleting, index, texts])
 
   return (
     <section id="home" className="relative pt-20 md:pt-32 pb-16 md:pb-24 overflow-hidden">
