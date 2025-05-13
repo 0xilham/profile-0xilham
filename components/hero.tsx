@@ -86,7 +86,6 @@ export default function Hero() {
                 <Link
                   href="/CV_Ilham Nur Hermawan.pdf"
                   className="flex items-center gap-2"
-                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Download className="mr-2 h-4 w-4" /> Download CV
