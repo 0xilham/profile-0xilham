@@ -89,6 +89,7 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
+        className="max-w-5xl mx-auto px-4"
       >
         <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">Skills</h2>
 
@@ -100,8 +101,8 @@ export default function Skills() {
             </TabsList>
           </div>
 
-          <TabsContent value="hard" className="space-y-8 px-4 md:px-12">
-            <div className="grid md:grid-cols-2 gap-6">
+          <TabsContent value="hard" className="space-y-8 px-2 md:px-8">
+            <div className="grid md:grid-cols-2 gap-4">
               {hardSkills.map((category, index) => (
                 <motion.div
                   key={index}
@@ -119,7 +120,7 @@ export default function Skills() {
                     <CardContent>
                       <div className="flex flex-wrap gap-2">
                         {category.skills.map((skill, i) => (
-                          <Badge key={i} variant="secondary" className="text-sm">
+                          <Badge key={i} variant="secondary" className="text-xs">
                             {skill}
                           </Badge>
                         ))}
@@ -131,7 +132,7 @@ export default function Skills() {
             </div>
           </TabsContent>
 
-          <TabsContent value="soft" className="space-y-8 px-4 md:px-12">
+          <TabsContent value="soft" className="space-y-8 px-2 md:px-8">
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -148,7 +149,7 @@ export default function Skills() {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: i * 0.05 }}
                     >
-                      <Badge variant="outline" className="text-sm py-1 px-3">
+                      <Badge variant="outline" className="text-xs py-1 px-2">
                         <Users className="h-3 w-3 mr-1" />
                         {skill}
                       </Badge>

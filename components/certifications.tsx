@@ -101,7 +101,7 @@ export default function Certifications() {
       <div className="section-container">
         <h2 className="section-title">Certifications</h2>
 
-        <div ref={ref} className="space-y-8">
+        <div ref={ref} className="space-y-8 max-w-4xl mx-auto">
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
@@ -141,7 +141,7 @@ export default function Certifications() {
                     <h4 className="font-medium mb-2">Relevant Skills:</h4>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {cert.skills.map((skill, i) => (
-                        <Badge key={i} variant="secondary">
+                        <Badge key={i} variant="secondary" className="text-xs">
                           {skill}
                         </Badge>
                       ))}

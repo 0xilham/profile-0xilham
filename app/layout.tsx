@@ -13,7 +13,7 @@ const poppins = Poppins({
 
 export const metadata = {
   title: "Ilham Nur Hermawan | Portfolio",
-  description: "Web3 & Game Developer Portfolio"
+  description: "Web3 & Game Developer Portfolio",
 }
 
 export default function RootLayout({
@@ -23,7 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${poppins.variable} font-sans overflow-x-hidden`}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+      </head>
+      <body className={`${inter.variable} ${poppins.variable} font-sans overflow-x-hidden pb-16 md:pb-0`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Header />
           {children}
