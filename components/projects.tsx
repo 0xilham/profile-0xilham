@@ -60,7 +60,7 @@ export default function Projects() {
     {
       title: "Catatan Olah TKP - Mobile App",
       description: "Note-taking application for crime scene investigation, designed to assist investigators in documenting evidence.",
-      image: "/placeholder.svg?height=300&width=600",
+      image: "https://images.unsplash.com/photo-1637942695886-69c5094fb1bb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       tags: ["Java", "Android", "SQLite", "API Integration", "GPS"],
       demoLink: "#",
       codeLink: "#",
