@@ -81,36 +81,33 @@ export default function Projects() {
   const filteredProjects = activeTab === "all" ? projects : projects.filter((project) => project.category === activeTab)
 
   return (
-    <section id="projects" className="py-16 md:py-24">
-      <div className="section-container">
-        <h2 className="section-title">Projects</h2>
+    <section id="projects" className="py-12 md:py-20">
+      <div className="section-container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="section-title text-center text-3xl font-bold mb-8">Projects</h2>
 
         <Tabs defaultValue="all" className="max-w-5xl mx-auto" onValueChange={setActiveTab}>
-          <div className="flex justify-center mb-8">
-            <TabsList>
-              <TabsTrigger value="all" className="px-4">
+          <div className="flex justify-center mb-6">
+            <TabsList className="flex flex-wrap gap-2">
+              <TabsTrigger value="all" className="px-3 py-1.5">
                 All
               </TabsTrigger>
-              <TabsTrigger value="web3" className="px-4">
-                Web3
-              </TabsTrigger>
-              <TabsTrigger value="web" className="px-4">
+              <TabsTrigger value="web" className="px-3 py-1.5">
                 Web
               </TabsTrigger>
-              <TabsTrigger value="game" className="px-4">
+              <TabsTrigger value="game" className="px-3 py-1.5">
                 Game Dev
               </TabsTrigger>
-              <TabsTrigger value="mobile" className="px-4">
+              <TabsTrigger value="mobile" className="px-3 py-1.5">
                 Mobile
               </TabsTrigger>
-              <TabsTrigger value="ai" className="px-4">
+              <TabsTrigger value="ai" className="px-3 py-1.5">
                 AI/ML
               </TabsTrigger>
             </TabsList>
           </div>
 
           <TabsContent value={activeTab} ref={ref}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={index}
@@ -127,9 +124,9 @@ export default function Projects() {
                         className="object-cover transition-transform duration-300 hover:scale-105"
                       />
                     </div>
-                    <CardContent className="pt-6 flex-grow">
-                      <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
+                    <CardContent className="pt-4 flex-grow">
+                      <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{project.description}</p>
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag, i) => (
                           <Badge key={i} variant="secondary" className="text-xs">
@@ -138,7 +135,7 @@ export default function Projects() {
                         ))}
                       </div>
                     </CardContent>
-                    <CardFooter className="border-t pt-4">
+                    <CardFooter className="border-t pt-3">
                       <div className="flex space-x-2 w-full">
                         <Button variant="outline" size="sm" className="flex-1">
                           <Link href={project.demoLink} className="flex items-center justify-center w-full">
@@ -163,7 +160,10 @@ export default function Projects() {
 
         <div className="text-center mt-12">
           <Button>
-            <Link href="#" className="flex items-center">
+            <Link 
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/0xilham" className="flex items-center">
               <Code className="h-4 w-4 mr-2" /> View All Projects
             </Link>
           </Button>

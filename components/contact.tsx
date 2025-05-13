@@ -9,7 +9,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send, Linkedin, Github, Twitter } from "lucide-react"
+import { Mail, MapPin, Send, Linkedin, Github, Instagram } from "lucide-react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -57,12 +57,6 @@ export default function Contact() {
       link: "mailto:ilhamnurhermawan@gmail.com",
     },
     {
-      icon: <Phone className="h-5 w-5 text-primary" />,
-      title: "Phone",
-      value: "+62 895 3723 30356",
-      link: "tel:+62895372330356",
-    },
-    {
       icon: <MapPin className="h-5 w-5 text-primary" />,
       title: "Location",
       value: "Cirebon, Jawa Barat, Indonesia",
@@ -74,17 +68,17 @@ export default function Contact() {
     {
       icon: <Github className="h-5 w-5" />,
       name: "GitHub",
-      link: "#",
+      link: "https://github.com/0xilham",
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
       name: "LinkedIn",
-      link: "#",
+      link: "https://linkedin.com/in/ilham-nur-hermawan",
     },
     {
-      icon: <Twitter className="h-5 w-5" />,
-      name: "Twitter",
-      link: "#",
+      icon: <Instagram className="h-5 w-5" />,
+      name: "Instagram",
+      link: "https://instagram.com/0x.ilham",
     },
   ]
 
