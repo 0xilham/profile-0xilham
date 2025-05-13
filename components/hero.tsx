@@ -7,8 +7,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 
-// Add the photo to the public directory
-
 export default function Hero() {
   const [typedText, setTypedText] = useState("")
   const texts = ["Web3 Developer", "Game Developer"]
@@ -53,8 +51,8 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="section-container relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -62,16 +60,16 @@ export default function Hero() {
             className="flex flex-col space-y-6"
           >
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-poppins mb-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-poppins mb-4">
                 Hi, I'm <span className="gradient-text">Ilham Nur Hermawan</span>
               </h1>
-              <h2 className="text-xl md:text-2xl font-medium text-gray-700 dark:text-gray-300 h-8">
+              <h2 className="text-lg md:text-xl font-medium text-gray-700 dark:text-gray-300 h-8">
                 I'm a {typedText}
                 <span className="animate-pulse">|</span>
               </h2>
             </div>
 
-            <p className="text-gray-600 dark:text-gray-400 text-lg">
+            <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg">
               Fresh graduate in Informatics Engineering with a passion for web3 development, game development, and
               creating innovative digital solutions.
             </p>
@@ -82,60 +80,29 @@ export default function Hero() {
                   View Projects <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-                <Button variant="outline">
-                <Link
-                  href="/CV_Ilham Nur Hermawan.pdf"
-                  className="flex items-center gap-2"
-                  rel="noopener noreferrer"
-                >
+              <Button variant="outline">
+                <Link href="/CV_Ilham Nur Hermawan.pdf" className="flex items-center gap-2" rel="noopener noreferrer">
                   <Download className="mr-2 h-4 w-4" /> Download CV
                 </Link>
-                </Button>
+              </Button>
             </div>
 
             <div className="flex space-x-4 pt-2">
-                <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full"
-                asChild
-                >
-                <Link
-                  href="https://github.com/0xilham"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              <Button variant="ghost" size="icon" className="rounded-full" asChild>
+                <Link href="https://github.com/0xilham" target="_blank" rel="noopener noreferrer">
                   <Github className="h-5 w-5" />
                 </Link>
-                </Button>
-                <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full"
-                asChild
-                >
-                <Link
-                  href="https://linkedin.com/in/ilham-nur-hermawan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              </Button>
+              <Button variant="ghost" size="icon" className="rounded-full" asChild>
+                <Link href="https://linkedin.com/in/ilham-nur-hermawan" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
                 </Link>
-                </Button>
-                <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full"
-                asChild
-                >
-                <Link
-                  href="mailto:ilhamnurhermawan@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              </Button>
+              <Button variant="ghost" size="icon" className="rounded-full" asChild>
+                <Link href="mailto:ilhamnurhermawan@gmail.com" target="_blank" rel="noopener noreferrer">
                   <Mail className="h-5 w-5" />
                 </Link>
-                </Button>
+              </Button>
             </div>
           </motion.div>
 
@@ -145,7 +112,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative w-full aspect-square max-w-md mx-auto">
+            <div className="relative w-full aspect-square max-w-[280px] md:max-w-[320px] mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-500/20 rounded-full blur-3xl"></div>
               <div className="relative bg-white dark:bg-gray-900 rounded-full p-4 shadow-xl overflow-hidden">
                 <Image
@@ -158,14 +125,14 @@ export default function Hero() {
                 />
               </div>
 
-              <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 rounded-full p-4 shadow-lg">
-                <div className="bg-gradient-to-r from-primary to-purple-600 rounded-full p-3">
+              <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 rounded-full p-3 md:p-4 shadow-lg">
+                <div className="bg-gradient-to-r from-primary to-purple-600 rounded-full p-2 md:p-3">
                   <code className="text-white text-xs font-mono">{"<Web3 />"}</code>
                 </div>
               </div>
 
-              <div className="absolute -top-6 -left-6 bg-white dark:bg-gray-800 rounded-full p-4 shadow-lg">
-                <div className="bg-gradient-to-r from-primary to-purple-600 rounded-full p-3">
+              <div className="absolute -top-6 -left-6 bg-white dark:bg-gray-800 rounded-full p-3 md:p-4 shadow-lg">
+                <div className="bg-gradient-to-r from-primary to-purple-600 rounded-full p-2 md:p-3">
                   <code className="text-white text-xs font-mono">{"<Game />"}</code>
                 </div>
               </div>

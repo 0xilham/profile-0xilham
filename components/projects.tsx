@@ -96,10 +96,10 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-12 md:py-20">
-      <div className="section-container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="section-title text-center text-3xl font-bold mb-8">Projects</h2>
 
-        <Tabs defaultValue="all" className="max-w-5xl mx-auto" onValueChange={setActiveTab}>
+        <Tabs defaultValue="all" className="mx-auto" onValueChange={setActiveTab}>
           <div className="flex justify-center mb-6 overflow-x-auto pb-2 no-scrollbar">
             <TabsList className="flex flex-nowrap">
               <TabsTrigger value="all" className="px-3 py-1.5 whitespace-nowrap">

@@ -89,7 +89,7 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="max-w-5xl mx-auto px-4"
+        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">Skills</h2>
 
@@ -101,7 +101,7 @@ export default function Skills() {
             </TabsList>
           </div>
 
-          <TabsContent value="hard" className="space-y-8 px-2 md:px-8">
+          <TabsContent value="hard" className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
               {hardSkills.map((category, index) => (
                 <motion.div
@@ -132,7 +132,7 @@ export default function Skills() {
             </div>
           </TabsContent>
 
-          <TabsContent value="soft" className="space-y-8 px-2 md:px-8">
+          <TabsContent value="soft" className="space-y-4">
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">

@@ -98,10 +98,10 @@ export default function Certifications() {
 
   return (
     <section id="certifications" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
-      <div className="section-container">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="section-title">Certifications</h2>
 
-        <div ref={ref} className="space-y-8 max-w-4xl mx-auto">
+        <div ref={ref} className="space-y-8">
           {certifications.map((cert, index) => (
             <motion.div
               key={index}

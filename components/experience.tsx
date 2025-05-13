@@ -31,10 +31,10 @@ export default function Experience() {
 
   return (
     <section id="experience" className="py-16 md:py-24">
-      <div className="section-container">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="section-title">Work Experience</h2>
 
-        <div ref={ref} className="max-w-3xl mx-auto">
+        <div ref={ref} className="mx-auto">
           {experienceData.map((job, index) => (
             <motion.div
               key={index}

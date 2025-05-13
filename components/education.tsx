@@ -23,7 +23,7 @@ export default function Education() {
 
   return (
     <section id="education" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
-      <div className="section-container">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="section-title">Education</h2>
 
         <motion.div
@@ -31,12 +31,12 @@ export default function Education() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto"
+          className="mx-auto"
         >
           <Card className="overflow-hidden card-hover">
             <div className="h-2 bg-gradient-to-r from-primary to-purple-600"></div>
             <CardContent className="pt-6">
-              <div className="flex items-start justify-between mb-4">
+              <div className="flex flex-col md:flex-row md:items-start justify-between mb-4">
                 <div className="flex items-start">
                   <div className="mr-4 p-2 bg-primary/10 rounded-full">
                     <GraduationCap className="h-6 w-6 text-primary" />
@@ -48,12 +48,12 @@ export default function Education() {
                     <p className="text-gray-600 dark:text-gray-400 mt-1">{educationData.institution}</p>
                   </div>
                 </div>
-                <div className="text-right">
-                  <div className="flex items-center justify-end text-sm text-gray-500 dark:text-gray-400 mb-2">
+                <div className="text-left md:text-right mt-4 md:mt-0">
+                  <div className="flex items-center justify-start md:justify-end text-sm text-gray-500 dark:text-gray-400 mb-2">
                     <CalendarDays className="h-4 w-4 mr-1" />
                     {educationData.graduationDate}
                   </div>
-                  <div className="bg-primary/10 text-primary px-2 py-1 rounded text-sm font-medium">
+                  <div className="bg-primary/10 text-primary px-2 py-1 rounded text-sm font-medium inline-block">
                     GPA: {educationData.gpa}
                   </div>
                 </div>
