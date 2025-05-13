@@ -72,7 +72,7 @@ export default function Header() {
         {/* Floating Action Button (Mode Toggle) */}
         <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
           <div className="bg-primary rounded-full p-2 shadow-lg">
-            <ModeToggle className="text-white" />
+            <ModeToggle className="text-white rounded-full" />
           </div>
         </div>
 
