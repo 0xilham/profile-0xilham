@@ -36,13 +36,14 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-sm" : "bg-transparent"
-      }`}
+      className={`fixed top-0 w-full z-50 overflow-x-hidden transition-all duration-300 ${isScrolled
+        ? "bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-sm"
+        : "bg-transparent"
+        }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <Link href="/" className="text-xl font-bold font-poppins">
+          <Link href="/" className="text-xl font-bold font-poppins whitespace-nowrap">
             <span className="gradient-text">Ilham</span>
             <span className="dark:text-white">.dev</span>
           </Link>
@@ -53,15 +54,15 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
+                className="text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors whitespace-nowrap"
               >
                 {item.name}
               </Link>
             ))}
             <ModeToggle />
-            <Button className="bg-primary hover:bg-primary/90">
-              <Link href="#contact">Hire Me</Link>
-            </Button>
+            <Link href="#contact">
+              <Button className="bg-primary hover:bg-primary/90 whitespace-nowrap">Hire Me</Button>
+            </Link>
           </nav>
 
           {/* Mobile Navigation Toggle */}
@@ -81,8 +82,8 @@ export default function Header() {
 
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-950 shadow-lg">
-          <div className="px-4 py-2 space-y-1">
+        <div className="md:hidden bg-white dark:bg-gray-950 shadow-lg px-4 pb-4">
+          <div className="space-y-1">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -93,14 +94,15 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
-            <Button className="w-full mt-4 bg-primary hover:bg-primary/90">
-              <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>
+              <Button className="w-full mt-4 bg-primary hover:bg-primary/90 whitespace-nowrap">
                 Hire Me
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
         </div>
       )}
     </header>
+
   )
 }
