@@ -35,22 +35,22 @@ export default function Skills() {
     {
       category: "Database & Tools",
       icon: <Database className="h-5 w-5" />,
-      skills: ["SQLite", "SQL & NoSQL", "Git", "Notion", "Microsoft Office"],
+      skills: ["SQLite", "MySql", "MongoDB", "SQL & NoSQL", "Git", "Notion", "Microsoft Office"],
     },
     {
-      category: "Design & UX",
+      category: "Design UI & UX",
       icon: <Figma className="h-5 w-5" />,
-      skills: ["UX Design", "Figma", "UI Design", "Game Design Document (GDD)"],
+      skills: ["UI & UX Design", "Figma", "Game Design Document (GDD)"],
     },
     {
       category: "Web3 Development",
       icon: <Layers className="h-5 w-5" />,
-      skills: ["Smart Contract", "Web3 dApps", "Hardhat", "Rainbowkit"],
+      skills: ["Smart Contract", "EVM", "Web3 dApps", "Hardhat", "Rainbowkit"],
     },
     {
       category: "AI & Algorithms",
       icon: <Cpu className="h-5 w-5" />,
-      skills: ["Artificial Intelligence", "LSTM (Long Short-Term Memory)"],
+      skills: ["Deep Learning", "LSTM (Long Short-Term Memory)"],
     },
     {
       category: "Mobile Development",
