@@ -140,3 +140,7 @@
 .skill-progress {
   @apply h-full bg-gradient-to-r from-primary to-purple-600 rounded-full transition-all duration-1000;
 }
+
+html, body {
+  overflow-x: auto;
+}

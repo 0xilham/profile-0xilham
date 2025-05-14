@@ -96,7 +96,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-12 md:py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-20 lg:px-20">
         <h2 className="section-title text-center text-3xl font-bold mb-8">Projects</h2>
 
         <Tabs defaultValue="all" className="mx-auto" onValueChange={setActiveTab}>
