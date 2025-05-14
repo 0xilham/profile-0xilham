@@ -112,16 +112,16 @@ export default function Header() {
 
         {/* Navigation Bar */}
         <div className="relative w-full h-14">
-          <svg
-            className="absolute top-0 left-0 w-full h-full rounded-full"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <path
+            <svg
+              className="absolute top-0 left-0 w-full h-full rounded-full"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            >
+              <path
               d={`M0,0 Q40,0 39,0 ,Q50,80, 61,0, Q100,0 100,0 L100,100 L0,100 Z`}
-              fill={isScrolled ? "rgba(0,0,0, 0.8)" : "transparent"}
-            />
-          </svg>
+              fill="rgba(0, 0, 0, 0.9)"
+              />
+            </svg>
 
           <div className="absolute top-0 left-0 w-full h-full flex justify-around items-center text-white px-4">
             <Link href="#home" onClick={() => setActiveNav("#home")}
