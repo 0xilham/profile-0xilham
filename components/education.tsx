@@ -23,7 +23,7 @@ export default function Education() {
 
   return (
     <section id="education" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-32 xl:px-56">
         <h2 className="section-title">Education</h2>
 
         <motion.div

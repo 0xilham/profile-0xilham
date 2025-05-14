@@ -38,7 +38,7 @@ export default function Hero() {
   }, [charIndex, isDeleting, index, texts])
 
   return (
-    <section id="home" className="relative pt-20 md:pt-32 pb-16 md:pb-24 overflow-hidden">
+    <section id="home" className="relative pt-20 md:pt-32 pb-16 md:pb-24">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-950 z-0"></div>
       <div className="absolute inset-0 opacity-30 dark:opacity-20">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -51,7 +51,7 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-20 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}

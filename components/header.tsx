@@ -74,7 +74,7 @@ export default function Header() {
         className={`fixed top-0 w-full z-50 transition-all duration-300 md:block hidden ${isScrolled ? "bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-sm" : "bg-transparent"
           }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-20 xl:px-32">
           <div className="flex justify-between items-center py-4">
             <Link href="/" className="text-xl font-bold font-poppins">
               <span className="gradient-text">Ilham</span>

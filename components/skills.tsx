@@ -89,7 +89,7 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-32 xl:px-56"
       >
         <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">Skills</h2>
 

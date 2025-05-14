@@ -31,7 +31,7 @@ export default function Experience() {
 
   return (
     <section id="experience" className="py-16 md:py-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-32 xl:px-56">
         <h2 className="section-title">Work Experience</h2>
 
         <div ref={ref} className="mx-auto">
