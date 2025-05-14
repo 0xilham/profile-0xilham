@@ -104,14 +104,14 @@ export default function Header() {
       {/* Mobile Bottom Navigation */}
       <div className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[400px]">
         {/* Floating Action Button (Mode Toggle) */}
-        <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
+        <div className="absolute -top-8 left-1/2 -translate-x-1/2 z-10">
           <div className="bg-primary rounded-full p-1 shadow-lg">
             <ModeToggle className="text-white rounded-full" />
           </div>
         </div>
 
         {/* Navigation Bar */}
-        <div className="relative w-full h-20">
+        <div className="relative w-full h-14">
           <svg
             className="absolute top-0 left-0 w-full h-full rounded-full"
             viewBox="0 0 100 100"
@@ -141,7 +141,7 @@ export default function Header() {
                 <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
               </svg>
-              <span className="text-xs mt-1">Home</span>
+              {/* <span className="text-xs mt-1">Home</span> */}
             </Link>
 
             <Link href="#skills" onClick={() => setActiveNav("#skills")}
@@ -169,7 +169,7 @@ export default function Header() {
                 <path d="M14 12h8"></path>
                 <path d="M2 12h2"></path>
               </svg>
-              <span className="text-xs mt-1">Skills</span>
+              {/* <span className="text-xs mt-1">Skills</span> */}
             </Link>
 
             {/* Empty space for the center button */}
@@ -195,7 +195,7 @@ export default function Header() {
                 <path d="M8 7h8"></path>
                 <path d="M8 11h8"></path>
               </svg>
-              <span className="text-xs mt-1">Projects</span>
+              {/* <span className="text-xs mt-1">Projects</span> */}
             </Link>
 
             <Link href="#contact" onClick={() => setActiveNav("#contact")}
@@ -214,7 +214,7 @@ export default function Header() {
               >
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
               </svg>
-              <span className="text-xs mt-1">Contact</span>
+              {/* <span className="text-xs mt-1">Contact</span> */}
             </Link>
           </div>
         </div>
