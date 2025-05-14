@@ -69,7 +69,7 @@
 }
 
 .section-container {
-  @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-10;
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
 }
 
 .section-title {
@@ -139,4 +139,33 @@
 
 .skill-progress {
   @apply h-full bg-gradient-to-r from-primary to-purple-600 rounded-full transition-all duration-1000;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .section-container {
+    @apply px-4 sm:px-4 py-12;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-container {
+    @apply px-2 py-8;
+  }
+
+  .section-title {
+    @apply text-xl;
+  }
+
+  .section-subtitle {
+    @apply text-base;
+  }
 }
