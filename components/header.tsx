@@ -18,9 +18,17 @@ const navItems = [
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const pathname = usePathname()
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
   const sectionIds = ["#home", "#projects", "#skills", "#contact"]
   const [activeNav, setActiveNav] = useState("")
   const observerRef = useRef<IntersectionObserver | null>(null)
