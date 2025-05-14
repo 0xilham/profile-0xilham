@@ -118,8 +118,8 @@ export default function Header() {
             preserveAspectRatio="none"
           >
             <path
-              d="M0,0 Q40,0 39,0 ,Q50,80, 61,0, Q100,0 100,0 L100,100 L0,100 Z"
-              fill="#111827" // warna: bg-gray-900
+              d={`M0,0 Q40,0 39,0 ,Q50,80, 61,0, Q100,0 100,0 L100,100 L0,100 Z`}
+              fill={isScrolled ? "rgba(0,0,0, 0.8)" : "transparent"}
             />
           </svg>
 
