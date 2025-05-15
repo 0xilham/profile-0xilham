@@ -113,7 +113,7 @@ export default function Header() {
         {/* Navigation Bar */}
         <div className="relative w-full h-14">
             <svg
-              className="absolute top-0 left-0 w-full h-full rounded-full"
+              className="absolute top-0 left-0 w-full h-full rounded-3xl"
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
             >
