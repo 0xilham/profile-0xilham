@@ -38,7 +38,7 @@ export default function Hero() {
   }, [charIndex, isDeleting, index, texts])
 
   return (
-    <section id="home" className="relative pt-20 md:pt-52 pb-16 md:pb-40 lg:pt-80 lg:pb-80">
+    <section id="home" className="relative pt-20 md:pt-52 pb-16 md:pb-40 lg:pt-50 lg:pb-50">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-950 z-0"></div>
       <div className="absolute inset-0 opacity-30 dark:opacity-20">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
