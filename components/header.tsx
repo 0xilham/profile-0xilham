@@ -120,12 +120,13 @@ export default function Header() {
               <path
               d="M0,0 Q40,0 39,0 ,Q50,80, 61,0, Q100,0 100,0 L100,100 L0,100 Z"
               fill="currentColor"
+              className="text-blue-800 dark:text-gray-800"
               />
             </svg>
 
           <div className="absolute top-0 left-0 w-full h-full flex justify-around items-center text-white px-4">
             <Link href="#home" onClick={() => setActiveNav("#home")}
-              className={`flex flex-col items-center text-xs transition-colors ${activeNav === "#home" ? "text-purple-600" : "text-primary"
+              className={`flex flex-col items-center text-xs transition-colors ${activeNav === "#home" ? "text-purple-500" : "text-white"
                 }`}>
               <svg className="w-5 h-5"
                 xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +146,7 @@ export default function Header() {
             </Link>
 
             <Link href="#skills" onClick={() => setActiveNav("#skills")}
-              className={`flex flex-col items-center text-xs transition-colors ${activeNav === "#skills" ? "text-purple-600" : "text-primary"
+              className={`flex flex-col items-center text-xs transition-colors ${activeNav === "#skills" ? "text-purple-500" : "text-white"
                 }`}>
               <svg className="w-5 h-5"
                 xmlns="http://www.w3.org/2000/svg"
@@ -176,7 +177,7 @@ export default function Header() {
             <div className="w-10"></div>
 
             <Link href="#projects" onClick={() => setActiveNav("#projects")}
-              className={`flex flex-col items-center text-xs transition-colors ${activeNav === "#projects" ? "text-purple-600" : "text-primary"
+              className={`flex flex-col items-center text-xs transition-colors ${activeNav === "#projects" ? "text-purple-500" : "text-white"
                 }`}>
               <svg className="w-5 h-5"
                 xmlns="http://www.w3.org/2000/svg"
@@ -199,7 +200,7 @@ export default function Header() {
             </Link>
 
             <Link href="#contact" onClick={() => setActiveNav("#contact")}
-              className={`flex flex-col items-center text-xs transition-colors ${activeNav === "#contact" ? "text-purple-600" : "text-primary"
+              className={`flex flex-col items-center text-xs transition-colors ${activeNav === "#contact" ? "text-purple-500" : "text-white"
                 }`}>
               <svg className="w-5 h-5"
                 xmlns="http://www.w3.org/2000/svg"
