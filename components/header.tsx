@@ -105,24 +105,31 @@ export default function Header() {
       <div className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[400px]">
         {/* Floating Action Button (Mode Toggle) */}
         <div className="absolute -top-8 left-1/2 -translate-x-1/2 z-10">
-          <div className="bg-primary rounded-full p-1 shadow-lg">
+          <div
+            className="bg-primary rounded-full p-1 shadow-lg"
+            onClick={(e) => {
+              const target = e.currentTarget;
+              target.classList.add("spin-animation");
+              setTimeout(() => target.classList.remove("spin-animation"), 1000);
+            }}
+          >
             <ModeToggle className="text-white rounded-full" />
           </div>
         </div>
 
         {/* Navigation Bar */}
         <div className="relative w-full h-14">
-            <svg
-              className="absolute top-0 left-0 w-full h-full rounded-3xl"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-            >
-              <path
+          <svg
+            className="absolute top-0 left-0 w-full h-full rounded-3xl"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <path
               d="M0,0 Q40,0 39,0 ,Q50,80, 61,0, Q100,0 100,0 L100,100 L0,100 Z"
               fill="currentColor"
               className="text-blue-800 dark:text-gray-800"
-              />
-            </svg>
+            />
+          </svg>
 
           <div className="absolute top-0 left-0 w-full h-full flex justify-around items-center text-white px-4">
             <Link href="#home" onClick={() => setActiveNav("#home")}
