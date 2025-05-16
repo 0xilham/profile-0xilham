@@ -81,7 +81,11 @@ export default function Hero() {
                 </Link>
               </Button>
               <Button variant="outline">
-                <Link href="/CV_Ilham Nur Hermawan.pdf" className="flex items-center gap-2" rel="noopener noreferrer">
+                <Link
+                  target="_blank"
+                  href="https://drive.google.com/file/d/1WAIvkKPdfUaJn0hJ0246LRJDi7vGRBgY/view?usp=sharing"
+                  className="flex items-center gap-2"
+                  rel="noopener noreferrer">
                   <Download className="mr-2 h-4 w-4" /> Download CV
                 </Link>
               </Button>
