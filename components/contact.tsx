@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
@@ -19,6 +18,7 @@ export default function Contact() {
     message: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submissionResult, setSubmissionResult] = useState<{ message: string; error?: string } | null>(null);
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -32,21 +32,31 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmissionResult(null); // Reset previous result
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      const response = await fetch('/api/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
-    setIsSubmitting(false)
+      const data = await response.json();
 
-    // Show success message (in a real app, you'd use a toast or alert)
-    alert("Message sent successfully!")
+      if (response.ok) {
+        setSubmissionResult({ message: data.message });
+        setFormData({ name: "", email: "", subject: "", message: "" }); // Reset form on success
+      } else {
+        setSubmissionResult({ message: 'Failed to send message.', error: data.error });
+      }
+    } catch (error: any) {
+      console.error('There was an error submitting the form:', error);
+      setSubmissionResult({ message: 'An unexpected error occurred.', error: error.message });
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
@@ -96,7 +106,6 @@ export default function Contact() {
             <Card className="h-full">
               <CardContent className="pt-6">
                 <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-
                 <div className="space-y-6 mb-8">
                   {contactInfo.map((item, index) => (
                     <div key={index} className="flex items-start">
@@ -195,13 +204,7 @@ export default function Contact() {
                       className="w-full min-h-[150px]"
                     />
                   </div>
-                  <Button
-                    type="submit"
-                    className="w-full"
-                    disabled={
-                      isSubmitting || !formData.name || !formData.email || !formData.subject || !formData.message
-                    }
-                  >
+                  <Button type="submit" className="w-full" disabled={isSubmitting}>
                     {isSubmitting ? (
                       <span className="flex items-center">
                         <svg
@@ -233,6 +236,13 @@ export default function Contact() {
                     )}
                   </Button>
                 </form>
+
+                {submissionResult && (
+                  <div className={`mt-4 p-4 rounded-md ${submissionResult.error ? 'bg-red-200 text-red-700' : 'bg-green-200 text-green-700'}`}>
+                    <p>{submissionResult.message}</p>
+                    {submissionResult.error && <p className="font-semibold">Error: {submissionResult.error}</p>}
+                  </div>
+                )}
               </CardContent>
             </Card>
           </motion.div>
