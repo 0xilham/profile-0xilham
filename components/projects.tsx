@@ -24,7 +24,7 @@ export default function Projects() {
       description:
         "A decentralized application focused on climate change awareness and action, built using Web3 technologies.",
       image:
-        "https://hamhrmwn.notion.site/image/attachment%3Afbc32c0c-66bc-4129-83b2-c4101019d5f7%3ACuplikan_layar_2025-04-22_012404.png?table=block&id=1dc3d31e-8e12-80e3-b77e-d9e85579c106&spaceId=75df719b-aa8c-4e8b-9652-96bf850c35ee&width=2000&userId=&cache=v2",
+        "https://hamhrmwn.notion.site/image/attachment%3Afbc32c0c-66bc-4129-83b2-c4101019d5f7%3ACuplikan_layar_2025-04-22_012404.png",
       tags: [
         "JavasScript",
         "Solidity",
@@ -130,14 +130,15 @@ export default function Projects() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <Card className="overflow-hidden h-full flex flex-col card-hover">
-                    <div className="relative h-48 overflow-hidden">
+                    {/* ANCHOR Img project <div className="relative h-48 overflow-hidden">
                       <Image
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
                         fill
                         className="object-cover transition-transform duration-300 hover:scale-105"
+                        priority={false}
                       />
-                    </div>
+                    </div> */}
                     <CardContent className="pt-4 flex-grow">
                       <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
                       <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{project.description}</p>
