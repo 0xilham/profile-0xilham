@@ -14,8 +14,8 @@ export default function Experience() {
 
   const experienceData = [
     {
-      title: "Quality Control Internship",
-      company: "DAC Indonesia (CV. Master Media)",
+      title: "Quality Control",
+      company: "PT DAC Indonesia",
       period: "December 2024 - January 2025",
       type: "Internship",
       responsibilities: [
