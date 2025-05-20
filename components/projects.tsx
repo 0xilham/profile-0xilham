@@ -20,6 +20,26 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "Rest API Laravel - Backend",
+      description:
+        "A RESTful API built with Laravel, providing a backend for various web applications.",
+      image:
+        "",
+      tags: [
+        "PHP",
+        "Laravel",
+        "MySQL",
+        "REST API",
+        "Authentication",
+        "API Testing",
+        "Git",
+        "API Documentation",
+      ],
+      demoLink: "https://github.com/0xilham/rest-api-laravel",
+      codeLink: "https://github.com/0xilham/rest-api-laravel",
+      category: "web",
+    },
+    {
       title: "Bank Recycle Waste - Web3 dApp",
       description:
         "A decentralized application focused on climate change awareness and action, built using Web3 technologies.",
@@ -109,7 +129,7 @@ export default function Projects() {
                 Web
               </TabsTrigger>
               <TabsTrigger value="game" className="px-3 py-1.5 whitespace-nowrap">
-                Game Dev
+                Game
               </TabsTrigger>
               <TabsTrigger value="mobile" className="px-3 py-1.5 whitespace-nowrap">
                 Mobile
