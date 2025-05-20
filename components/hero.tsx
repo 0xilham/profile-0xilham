@@ -70,7 +70,7 @@ export default function Hero() {
             </div>
 
             <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg">
-              Fresh graduate in Informatics Engineering with a passion for web3 development, game development, and
+              Fresh graduate in Informatics Engineering with a passion for fullstack development, web3 development, game development, and
               creating innovative digital solutions.
             </p>
 
