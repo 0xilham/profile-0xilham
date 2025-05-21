@@ -16,7 +16,7 @@ export default function Education() {
     field: "Informatics Engineering",
     institution: "Sekolah Tinggi Manajemen Informatika dan Komputer IKMI Cirebon",
     graduationDate: "May 2025",
-    gpa: "3.64",
+    gpa: "3.67",
     thesis: "Hyperparameter Long Short Term Memory Untuk Meningkatkan Model Prediksi Curah Hujan",
     relevantCourses: ["Algorithms and Programming", "Artificial Intelligence", "Database", "Web Programming"],
   }
