@@ -84,7 +84,7 @@ export default function Certifications() {
       issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
       date: "September 2022",
       credential: "62010 2513 4 0002193 2022",
-      skills: ["PHP", "JavaScript", "HTML & CSS", "Git Version Control System"],
+      skills: ["PHP", "JavaScript", "HTML & CSS", "MySQL", "Git Version Control System"],
       description: [
         "Implemented User Interface (UI).",
         "Applied text, graphic, and multimedia-based programming execution commands.",
@@ -93,7 +93,7 @@ export default function Certifications() {
         "Implemented structured programming.",
         "Used pre-existing libraries or components.",
       ],
-      certLink: "#",
+      certLink: "https://drive.google.com/file/d/1a5EttABLZVN03PyWUZKWVDPaARRIy_h6/view?usp=sharing",
     },
     {
       title: "Junior Mobile Programmer",
@@ -110,7 +110,7 @@ export default function Certifications() {
         "Displayed mobile sensors and technical specifications.",
         "Determined mobile cellular networks.",
       ],
-      certLink: "#",
+      certLink: "https://drive.google.com/file/d/1a4fdfUfRhjbXFoqFWjJR4zQTss3w-uIU/view?usp=sharing",
     },
     {
       title: "UX Design For Website",

@@ -23,6 +23,8 @@ export default function Skills() {
         "HTML",
         "CSS",
         "Laravel",
+        "Django",
+        "Restful API",
         "React",
         "Node.js",
         "Next.js",

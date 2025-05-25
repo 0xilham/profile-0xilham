@@ -19,12 +19,42 @@ export default function Experience() {
       period: "December 2024 - January 2025",
       type: "Internship",
       responsibilities: [
-        "Ensured laptop product quality by inspecting materials and components",
-        "Tested various components such as CPU, RAM, and SSD",
-        "Verified software functionality",
-        "Conducted product quality analysis",
-        "Inspected products before shipment",
-        "Prepared detailed product quality reports",
+        "Conducted end - to - end quality control inspections(physical, hardware, and software testing) on 100 laptop units / day using a structured process",
+        "Checked casing, screen, and external components for manufacturing defects(detected 5- 10 defective units per week)",
+        "Running automated diagnostic tools for CPU, RAM, SSD, and connectivity(98 % passed performance tests, 2 % rejected for repair)",
+        "Ensured proper OS installation, driver functionality, and application compatibility(100 % units passed compatibility tests)",
+        "Reduced defective shipments by 20 % by implementing a standardized checklist system",
+        "Assisted the team in compiling daily QC reports, including root cause analysis to improve production processes",
+      ],
+    },
+    {
+      title: "Game Design & Development",
+      company: "PT Kinema Systrans Multimedia",
+      period: "February 2024 - June 2024",
+      type: "Certified Independent Study",
+      responsibilities: [
+        "Game engines and Game Design Principles",
+        "Game theory, ethics, story and narrative development",
+        "Game mechanics and game design documentation(GDD)",
+        "Game coding foundation",
+        "Game assets management and integration",
+        "Game UI, Sound Design and preparing for playtesting",
+        "Monetization, coding plans and advanced mechanics",
+        "Develop capstone project",
+        "Presentation and showcase",
+      ],
+    },
+    {
+      title: "Solidity Blockchain Developer",
+      company: "PT GreatEdu Global Mahardika",
+      period: "August 2023 - December 2023",
+      type: "Certified Independent Study",
+      responsibilities: [
+        "Blockchain merges data structures, security, and consensus protocols, enabling resilient dApps",
+        "Ethereum’s smart contracts and tokenization facilitate asset exchange",
+        "JavaScript and Solidity are vital for dApp interfaces and contracts",
+        "Scaling and security ensure blockchain’s robustness",
+        "Building Web3 innovates decentralized platforms with a theme climate change",
       ],
     },
   ]
@@ -32,7 +62,7 @@ export default function Experience() {
   return (
     <section id="experience" className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-32 xl:px-56">
-        <h2 className="section-title">Work Experience</h2>
+        <h2 className="section-title">Experience</h2>
 
         <div ref={ref} className="mx-auto">
           {experienceData.map((job, index) => (
