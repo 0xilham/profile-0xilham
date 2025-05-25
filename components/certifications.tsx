@@ -15,6 +15,19 @@ export default function Certifications() {
 
   const certifications = [
     {
+      title: "Basic Structured Query Language (SQL)",
+      issuer: "Dicoding Indonesia",
+      date: "May 2025 - May 2028",
+      credential: "QLZ93LRM7Z5D",
+      skills: ["SQL", "SQLite", "MySQL"],
+      description: [
+        "Mastered fundamental SQL concepts, including data types, queries, and manipulation.",
+        "Gained proficiency in database design, normalization, and relationships.",
+        "Developed skills in querying, filtering, sorting, and aggregating data.",
+      ],
+      certLink: "https://www.dicoding.com/certificates/QLZ93LRM7Z5D",
+    },
+    {
       title: "Game Design & Development",
       issuer: "PT. Kinema Systrans Multimedia",
       collaboration: "RMIT University Australia",
@@ -26,6 +39,7 @@ export default function Certifications() {
         "Implemented UI design, sound design, playtesting, and monetization.",
         "Capstone project, presentation and product showcase with RMIT University Australia.",
       ],
+      certLink: "https://drive.google.com/file/d/1_b1KMvQX0qVnsmA8gyruLYmiCv5fp_sL/view?usp=sharing",
     },
     {
       title: "Web3 Development",
@@ -50,6 +64,20 @@ export default function Certifications() {
         "Experienced in Ethereum smart contracts, tokenization, JavaScript, and Solidity.",
         "Focused on scalability, security, and innovation for Web3 platforms with a climate change theme.",
       ],
+      certLink: "https://drive.google.com/file/d/1_jQjutDIEa5aZeU6VQcyFt5b4u3JIobB/view?usp=sharing",
+    },
+    {
+      title: "Database Programming with SQL",
+      issuer: "Oracle Academy",
+      date: "January 2023",
+      credential: "580/SQL/Oracle-Academy/l/2023",
+      skills: ["SQL", "Oracle Database"],
+      description: [
+        "Acquired knowledge in database design, normalization, and SQL queries.",
+        "Developed skills in data modeling, query optimization, and database administration.",
+        "Created and managed databases using Oracle Database.",
+      ],
+      certLink: "https://drive.google.com/file/d/1_lQb4v7CnvS23omB1JSDea4u7hhXrefe/view?usp=sharing",
     },
     {
       title: "Junior Web Developer",
@@ -65,6 +93,7 @@ export default function Certifications() {
         "Implemented structured programming.",
         "Used pre-existing libraries or components.",
       ],
+      certLink: "#",
     },
     {
       title: "Junior Mobile Programmer",
@@ -81,6 +110,7 @@ export default function Certifications() {
         "Displayed mobile sensors and technical specifications.",
         "Determined mobile cellular networks.",
       ],
+      certLink: "#",
     },
     {
       title: "UX Design For Website",
@@ -93,6 +123,7 @@ export default function Certifications() {
         "Created and updated websites.",
         "Created basic design images.",
       ],
+      certLink: "https://drive.google.com/file/d/1a0dwH_ufFuD9YZrkm1bsTwQ29q6KZbeZ/view?usp=sharing",
     },
   ]
 
@@ -156,7 +187,9 @@ export default function Certifications() {
                   </div>
 
                   <div className="mt-4 flex justify-end">
-                    <Link href="#" className="text-primary hover:underline flex items-center text-sm">
+                    <Link href={cert.certLink} className="text-primary hover:underline flex items-center text-sm"
+                      rel="noopener noreferrer"
+                      target="_blank">
                       View Certificate <ExternalLink className="h-3 w-3 ml-1" />
                     </Link>
                   </div>
