@@ -9,7 +9,7 @@ import { motion } from "framer-motion"
 
 export default function Hero() {
   const [typedText, setTypedText] = useState("")
-  const texts = ["Junior Programmer", "Fullstack Developer", "Web3 Developer"]
+  const texts = ["Programmer", "Fullstack Developer", "Web3 Developer"]
   const [index, setIndex] = useState(0)
   const [charIndex, setCharIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
