@@ -19,7 +19,7 @@ export default function Experience() {
             period: "July 2025 - Present",
             type: "Full Time",
             responsibilities: [
-                "Coordinate with the Product Manager to understand the roadmap and feature priorities",
+                "Coordinate with the Product Development Manager to understand the roadmap and feature priorities",
                 "Write and test clean, efficient, and maintainable source code",
                 "Developing new features according to business needs",
             ],
