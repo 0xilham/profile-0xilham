@@ -15,7 +15,7 @@ export default function Experience() {
     const experienceData = [
         {
             title: "Product Development Staff",
-            company: "PT Graha Informatika Nusantara",
+            company: "PT Graha Informatika Nusantara (GRATIKA)",
             period: "July 2025 - Present",
             type: "Full Time",
             responsibilities: [
