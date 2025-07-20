@@ -69,8 +69,8 @@ export default function Contact() {
         {
             icon: <MapPin className="h-5 w-5 text-primary" />,
             title: "Location",
-            value: "West Jakarta, DKI Jakarta, Indonesia",
-            link: "https://maps.google.com/?q=Jakarta+Barat,DKI+Jakarta,Indonesia",
+            value: "Central Jakarta, DKI Jakarta, Indonesia",
+            link: "https://maps.google.com/?q=Jakarta+Pusat,DKI+Jakarta,Indonesia",
         },
     ]
 
