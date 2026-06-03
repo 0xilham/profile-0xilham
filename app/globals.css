@@ -4,48 +4,26 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 44 43% 98%;
+    --foreground: 0 0% 18%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 18%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --popover-foreground: 0 0% 18%;
+    --primary: 0 0% 18%;
+    --primary-foreground: 44 43% 98%;
+    --secondary: 44 32% 88%;
+    --secondary-foreground: 0 0% 18%;
+    --muted: 44 32% 88%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 100% 65%;
+    --accent-foreground: 44 43% 98%;
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 44 43% 98%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 18%;
     --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
   }
 }
 
@@ -54,7 +32,9 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-paper text-pencil;
+    background-image: radial-gradient(#e5e0d8 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 }
 
@@ -73,11 +53,11 @@
 }
 
 .section-title {
-  @apply text-3xl md:text-4xl font-bold mb-8 text-center font-poppins;
+  @apply text-4xl md:text-6xl font-bold mb-8 text-center font-kalam tracking-tight;
 }
 
 .section-subtitle {
-  @apply text-xl md:text-2xl font-semibold mb-4 font-poppins;
+  @apply text-2xl md:text-3xl font-bold mb-4 font-kalam text-pencil/80;
 }
 
 .card-hover {
@@ -101,6 +81,12 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Accessibility Focus States */
+*:focus-visible {
+  outline: 3px dashed var(--color-marker-red);
+  outline-offset: 4px;
 }
 
 .animate-slide-in-left {

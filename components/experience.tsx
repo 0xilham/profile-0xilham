@@ -22,8 +22,10 @@ export default function Experience() {
                 "Coordinate with the Product Development Manager to understand the roadmap and feature priorities",
                 "Write and test clean, efficient, and maintainable source code",
                 "Developing new features according to business needs",
+                "Develop Android mobile applications using React Native for internal company operational needs",
             ],
         },
+        /*
         {
             title: "Quality Control",
             company: "PT DAC Indonesia",
@@ -38,6 +40,8 @@ export default function Experience() {
                 "Assisted the team in compiling daily QC reports, including root cause analysis to improve production processes",
             ],
         },
+        */
+        /*
         {
             title: "Game Design & Development",
             company: "PT Kinema Systrans Multimedia",
@@ -55,6 +59,7 @@ export default function Experience() {
                 "Presentation and showcase",
             ],
         },
+        */
         {
             title: "Solidity Blockchain Developer",
             company: "PT GreatEdu Global Mahardika",
@@ -83,31 +88,30 @@ export default function Experience() {
                             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             transition={{ duration: 0.5, delay: index * 0.2 }}
                         >
-                            <Card className="mb-8 overflow-hidden card-hover">
-                                <div className="h-2 bg-gradient-to-r from-primary to-purple-600"></div>
-                                <CardContent className="pt-6">
-                                    <div className="flex flex-col md:flex-row md:items-start justify-between mb-4">
+                            <Card decoration="tape" className={`mb-8 ${index % 2 === 0 ? "rotate-1 hover:-rotate-1" : "-rotate-1 hover:rotate-1"}`}>
+                                <CardContent className="pt-8">
+                                    <div className="flex flex-col md:flex-row md:items-start justify-between mb-4 border-b-2 border-pencil/20 border-dashed pb-4">
                                         <div>
-                                            <h3 className="text-xl font-bold">{job.title}</h3>
-                                            <p className="text-gray-600 dark:text-gray-400 flex items-center mt-1">
-                                                <Briefcase className="h-4 w-4 mr-2" />
+                                            <h3 className="text-3xl font-bold font-kalam">{job.title}</h3>
+                                            <p className="text-pencil/80 font-patrick-hand text-xl flex items-center mt-1">
+                                                <Briefcase className="h-5 w-5 mr-2 text-pen-blue" />
                                                 {job.company}
                                             </p>
                                         </div>
-                                        <div className="mt-2 md:mt-0 flex flex-col items-start md:items-end">
+                                        <div className="mt-4 md:mt-0 flex flex-col items-start md:items-end">
                                             <Badge variant="outline" className="mb-2">
                                                 {job.type}
                                             </Badge>
-                                            <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center">
-                                                <CalendarDays className="h-4 w-4 mr-2" />
+                                            <p className="text-lg font-patrick-hand text-pencil/70 flex items-center">
+                                                <CalendarDays className="h-5 w-5 mr-2 text-marker-red" />
                                                 {job.period}
                                             </p>
                                         </div>
                                     </div>
 
                                     <div className="mt-4">
-                                        <h4 className="font-medium mb-2">Responsibilities:</h4>
-                                        <ul className="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
+                                        <h4 className="font-bold mb-3 font-kalam text-2xl">Responsibilities:</h4>
+                                        <ul className="list-disc pl-5 space-y-2 text-pencil/90 font-patrick-hand text-lg">
                                             {job.responsibilities.map((item, i) => (
                                                 <li key={i}>{item}</li>
                                             ))}

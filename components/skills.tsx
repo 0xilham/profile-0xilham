@@ -15,25 +15,22 @@ export default function Skills() {
       category: "Programming & Frameworks",
       icon: <Code className="h-5 w-5" />,
       skills: [
-        "PHP",
         "JavaScript",
+        "TypeScript",
+        "React Native",
+        "React",
+        "Next.js",
+        "Node.js",
+        "Solidity",
+        "Web3.js",
+        "Ethers.js",
         "Python",
-        "C#",
-        "Java",
         "HTML",
         "CSS",
-        "Laravel",
-        "Django",
-        "Restful API",
-        "React",
-        "Node.js",
-        "Next.js",
         "Tailwind CSS",
-        "Web3.js",
-        "UnityEngine",
-        "Solidity",
       ],
     },
+    /*
     {
       category: "Database & Tools",
       icon: <Database className="h-5 w-5" />,
@@ -44,26 +41,31 @@ export default function Skills() {
       icon: <Figma className="h-5 w-5" />,
       skills: ["UI & UX Design", "Figma", "Game Design Document (GDD)"],
     },
+    */
     {
       category: "Web3 Development",
       icon: <Layers className="h-5 w-5" />,
-      skills: ["Smart Contract", "EVM", "Web3 dApps", "Hardhat", "Rainbowkit"],
+      skills: ["Smart Contract", "EVM", "Web3 dApps", "Hardhat", "Rainbowkit", "IPFS", "Wagmi"],
     },
+    /*
     {
       category: "AI & Algorithms",
       icon: <Cpu className="h-5 w-5" />,
       skills: ["Deep Learning", "LSTM (Long Short-Term Memory)"],
     },
+    */
     {
       category: "Mobile Development",
       icon: <Smartphone className="h-5 w-5" />,
-      skills: ["Mobile Interface Design", "Location-based Services", "Mobile Security"],
+      skills: ["React Native", "Expo", "Mobile UI/UX", "State Management (Redux/Zustand)", "API Integration"],
     },
+    /*
     {
       category: "Quality Assurance",
       icon: <GitBranch className="h-5 w-5" />,
       skills: ["Debugging software & hardware", "Quality Control Computer"],
     },
+    */
   ]
 
   const softSkills = [
@@ -93,7 +95,7 @@ export default function Skills() {
         viewport={{ once: true }}
         className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-32 xl:px-56"
       >
-        <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">Skills</h2>
+        <h2 className="section-title">Skills</h2>
 
         <Tabs defaultValue="hard" className="w-full" onValueChange={setActiveTab}>
           <div className="flex justify-center mb-8">
@@ -112,17 +114,17 @@ export default function Skills() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
-                  <Card>
+                  <Card decoration="tape" className={`h-full ${index % 2 === 0 ? "rotate-1" : "-rotate-1"}`}>
                     <CardHeader className="pb-2">
-                      <CardTitle className="flex items-center gap-2 text-lg">
+                      <CardTitle className="flex items-center gap-2 text-2xl font-kalam">
                         {category.icon}
                         {category.category}
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-3">
                         {category.skills.map((skill, i) => (
-                          <Badge key={i} variant="secondary" className="text-xs">
+                          <Badge key={i} variant="secondary" className="text-lg">
                             {skill}
                           </Badge>
                         ))}
@@ -135,15 +137,15 @@ export default function Skills() {
           </TabsContent>
 
           <TabsContent value="soft" className="space-y-4">
-            <Card>
+            <Card decoration="tack" className="-rotate-1">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Lightbulb className="h-5 w-5" />
+                <CardTitle className="flex items-center gap-2 text-3xl font-kalam">
+                  <Lightbulb className="h-8 w-8 text-marker-red" />
                   Soft Skills
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {softSkills.map((skill, i) => (
                     <motion.div
                       key={i}
@@ -151,8 +153,8 @@ export default function Skills() {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: i * 0.05 }}
                     >
-                      <Badge variant="outline" className="text-xs py-1 px-2">
-                        <Users className="h-3 w-3 mr-1" />
+                      <Badge variant="outline" className="text-lg py-1 px-3">
+                        <Users className="h-5 w-5 mr-2 text-pen-blue" />
                         {skill}
                       </Badge>
                     </motion.div>

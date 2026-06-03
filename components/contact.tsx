@@ -61,15 +61,15 @@ export default function Contact() {
 
     const contactInfo = [
         {
-            icon: <Mail className="h-5 w-5 text-primary" />,
+            icon: <Mail className="h-6 w-6 text-marker-red" />,
             title: "Email",
             value: "ilhamnurhermawan@gmail.com",
             link: "mailto:ilhamnurhermawan@gmail.com",
         },
         {
-            icon: <MapPin className="h-5 w-5 text-primary" />,
+            icon: <MapPin className="h-6 w-6 text-marker-red" />,
             title: "Location",
-            value: "Jakarta, DKI Jakarta, Indonesia",
+            value: "Jakarta, Indonesia",
             link: "https://maps.google.com/?q=Jakarta+Pusat,DKI+Jakarta,Indonesia",
         },
     ]
@@ -93,28 +93,28 @@ export default function Contact() {
     ]
 
     return (
-        <section id="contact" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+        <section id="contact" className="py-16 md:py-24">
             <div className="section-container">
                 <h2 className="section-title">Get In Touch</h2>
 
-                <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <Card className="h-full">
-                            <CardContent className="pt-6">
-                                <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-                                <div className="space-y-6 mb-8">
+                        <Card decoration="tape" className="h-full rotate-1 hover:-rotate-1">
+                            <CardContent className="pt-8">
+                                <h3 className="text-4xl font-bold font-kalam mb-6">Contact Information</h3>
+                                <div className="space-y-6 mb-8 border-b-2 border-pencil/20 border-dashed pb-8">
                                     {contactInfo.map((item, index) => (
                                         <div key={index} className="flex items-start">
-                                            <div className="p-2 bg-primary/10 rounded-full mr-4">{item.icon}</div>
+                                            <div className="mr-4 mt-1">{item.icon}</div>
                                             <div>
-                                                <h4 className="font-medium text-gray-700 dark:text-gray-300">{item.title}</h4>
+                                                <h4 className="font-bold font-kalam text-2xl">{item.title}</h4>
                                                 <a
                                                     href={item.link}
-                                                    className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors break-all"
+                                                    className="text-pen-blue hover:text-marker-red underline decoration-wavy font-patrick-hand text-xl transition-colors break-all"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
@@ -125,7 +125,7 @@ export default function Contact() {
                                     ))}
                                 </div>
 
-                                <h4 className="font-medium mb-4">Connect with me:</h4>
+                                <h4 className="font-bold font-kalam text-2xl mb-4">Connect with me:</h4>
                                 <div className="flex space-x-4">
                                     {socialLinks.map((social, index) => (
                                         <a
@@ -133,7 +133,7 @@ export default function Contact() {
                                             href={social.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-primary/10 transition-colors"
+                                            className={`p-3 border-[3px] border-pencil rounded-wobbly bg-white shadow-hard hover:bg-muted-paper hover:-translate-y-1 transition-transform text-pencil ${index % 2 === 0 ? "rotate-2 hover:rotate-0" : "-rotate-2 hover:rotate-0"}`}
                                             aria-label={social.name}
                                         >
                                             {social.icon}
@@ -141,8 +141,8 @@ export default function Contact() {
                                     ))}
                                 </div>
 
-                                <div className="mt-8 p-4 bg-primary/5 rounded-lg">
-                                    <p className="text-gray-700 dark:text-gray-300 italic">
+                                <div className="mt-8 p-6 bg-[#fff9c4] border-[3px] border-pencil border-dashed rounded-wobbly -rotate-1">
+                                    <p className="text-pencil font-patrick-hand text-xl">
                                         "I'm always open to discussing new projects, creative ideas or opportunities to be part of your
                                         vision."
                                     </p>
@@ -156,55 +156,63 @@ export default function Contact() {
                         animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                        <Card className="h-full">
-                            <CardContent className="pt-6">
-                                <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
+                        <Card decoration="tack" className="h-full -rotate-1 hover:rotate-1">
+                            <CardContent className="pt-8">
+                                <h3 className="text-4xl font-bold font-kalam mb-6">Send Me a Message</h3>
 
                                 <form onSubmit={handleSubmit} className="space-y-4">
-                                    <div>
+                                    <div className="space-y-2">
+                                        <label htmlFor="name" className="font-bold font-kalam text-xl ml-1">Your Name</label>
                                         <Input
+                                            id="name"
                                             type="text"
                                             name="name"
-                                            placeholder="Your Name"
+                                            placeholder="What should I call you?"
                                             value={formData.name}
                                             onChange={handleChange}
                                             required
-                                            className="w-full"
+                                            className="w-full text-lg"
                                         />
                                     </div>
-                                    <div>
+                                    <div className="space-y-2">
+                                        <label htmlFor="email" className="font-bold font-kalam text-xl ml-1">Your Email</label>
                                         <Input
+                                            id="email"
                                             type="email"
                                             name="email"
-                                            placeholder="Your Email"
+                                            placeholder="Where can I reach you?"
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
-                                            className="w-full"
+                                            className="w-full text-lg"
                                         />
                                     </div>
-                                    <div>
+                                    <div className="space-y-2">
+                                        <label htmlFor="subject" className="font-bold font-kalam text-xl ml-1">Subject</label>
                                         <Input
+                                            id="subject"
                                             type="text"
                                             name="subject"
-                                            placeholder="Subject"
+                                            placeholder="What's this about?"
                                             value={formData.subject}
                                             onChange={handleChange}
                                             required
-                                            className="w-full"
+                                            className="w-full text-lg"
                                         />
                                     </div>
-                                    <div>
+                                    <div className="space-y-2">
+                                        <label htmlFor="message" className="font-bold font-kalam text-xl ml-1">Your Message</label>
                                         <Textarea
+                                            id="message"
                                             name="message"
-                                            placeholder="Your Message"
+                                            placeholder="Tell me more..."
                                             value={formData.message}
                                             onChange={handleChange}
                                             required
-                                            className="w-full min-h-[150px]"
+                                            className="w-full min-h-[150px] text-lg"
                                         />
                                     </div>
-                                    <Button type="submit" className="w-full" disabled={isSubmitting}>
+                                    <Button type="submit" className="w-full rotate-1 text-xl py-6" disabled={isSubmitting}>
                                         {isSubmitting ? (
                                             <span className="flex items-center">
                                                 <svg
@@ -230,17 +238,17 @@ export default function Contact() {
                                                 Sending...
                                             </span>
                                         ) : (
-                                            <span className="flex items-center justify-center">
-                                                Send Message <Send className="ml-2 h-4 w-4" />
+                                            <span className="flex items-center justify-center font-bold">
+                                                Send Message <Send className="ml-2 h-5 w-5" />
                                             </span>
                                         )}
                                     </Button>
                                 </form>
 
                                 {submissionResult && (
-                                    <div className={`mt-4 p-4 rounded-md ${submissionResult.error ? 'bg-red-200 text-red-700' : 'bg-green-200 text-green-700'}`}>
+                                    <div className={`mt-6 p-4 border-[3px] border-pencil rounded-wobbly font-patrick-hand text-xl shadow-hard-sm ${submissionResult.error ? 'bg-red-200 text-red-900 rotate-1' : 'bg-green-200 text-green-900 -rotate-1'}`}>
                                         <p>{submissionResult.message}</p>
-                                        {submissionResult.error && <p className="font-semibold">Error: {submissionResult.error}</p>}
+                                        {submissionResult.error && <p className="font-bold">Error: {submissionResult.error}</p>}
                                     </div>
                                 )}
                             </CardContent>

@@ -22,7 +22,7 @@ export default function Education() {
   }
 
   return (
-    <section id="education" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+    <section id="education" className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-32 xl:px-56">
         <h2 className="section-title">Education</h2>
 
@@ -33,27 +33,26 @@ export default function Education() {
           transition={{ duration: 0.5 }}
           className="mx-auto"
         >
-          <Card className="overflow-hidden card-hover">
-            <div className="h-2 bg-gradient-to-r from-primary to-purple-600"></div>
-            <CardContent className="pt-6">
-              <div className="flex flex-col md:flex-row md:items-start justify-between mb-4">
+          <Card decoration="tape" className="overflow-hidden -rotate-1 hover:rotate-1">
+            <CardContent className="pt-8">
+              <div className="flex flex-col md:flex-row md:items-start justify-between mb-4 border-b-2 border-pencil/20 border-dashed pb-4">
                 <div className="flex items-start">
-                  <div className="mr-4 p-2 bg-primary/10 rounded-full">
-                    <GraduationCap className="h-6 w-6 text-primary" />
+                  <div className="mr-4">
+                    <GraduationCap className="h-8 w-8 text-marker-red" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold">
+                    <h3 className="text-3xl font-bold font-kalam">
                       {educationData.degree} in {educationData.field}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mt-1">{educationData.institution}</p>
+                    <p className="text-pencil/80 font-patrick-hand text-xl mt-1">{educationData.institution}</p>
                   </div>
                 </div>
                 <div className="text-left md:text-right mt-4 md:mt-0">
-                  <div className="flex items-center justify-start md:justify-end text-sm text-gray-500 dark:text-gray-400 mb-2">
-                    <CalendarDays className="h-4 w-4 mr-1" />
+                  <div className="flex items-center justify-start md:justify-end text-lg font-patrick-hand text-pencil/70 mb-2">
+                    <CalendarDays className="h-5 w-5 mr-2 text-pen-blue" />
                     {educationData.graduationDate}
                   </div>
-                  <div className="bg-primary/10 text-primary px-2 py-1 rounded text-sm font-medium inline-block">
+                  <div className="bg-muted-paper border-[3px] border-pencil text-pencil px-3 py-1 rounded-wobbly text-xl font-patrick-hand font-bold inline-block rotate-2">
                     GPA: {educationData.gpa}
                   </div>
                 </div>
@@ -61,21 +60,21 @@ export default function Education() {
 
               <div className="mt-6 space-y-4">
                 <div>
-                  <h4 className="font-medium flex items-center mb-2">
-                    <BookOpen className="h-4 w-4 mr-2" />
+                  <h4 className="font-bold font-kalam text-2xl flex items-center mb-3">
+                    <BookOpen className="h-5 w-5 mr-2 text-pen-blue" />
                     Thesis
                   </h4>
-                  <p className="text-gray-700 dark:text-gray-300 pl-6">{educationData.thesis}</p>
+                  <p className="text-pencil/90 font-patrick-hand text-xl pl-8">{educationData.thesis}</p>
                 </div>
 
                 <div>
-                  <h4 className="font-medium flex items-center mb-2">
-                    <BookOpen className="h-4 w-4 mr-2" />
+                  <h4 className="font-bold font-kalam text-2xl flex items-center mb-3">
+                    <BookOpen className="h-5 w-5 mr-2 text-pen-blue" />
                     Relevant Courses
                   </h4>
-                  <div className="pl-6 flex flex-wrap gap-2">
+                  <div className="pl-8 flex flex-wrap gap-3">
                     {educationData.relevantCourses.map((course, index) => (
-                      <span key={index} className="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-sm">
+                      <span key={index} className="bg-white border-2 border-pencil rounded-wobblySm shadow-hard-sm px-4 py-1 font-patrick-hand text-lg hover:-translate-y-1 transition-transform cursor-default">
                         {course}
                       </span>
                     ))}

@@ -20,10 +20,16 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)"],
-        poppins: ["var(--font-poppins)"],
+        kalam: ["var(--font-kalam)", "cursive"],
+        "patrick-hand": ["var(--font-patrick-hand)", "cursive"],
+        sans: ["var(--font-patrick-hand)", "sans-serif"],
       },
       colors: {
+        paper: "#fdfbf7",
+        pencil: "#2d2d2d",
+        "muted-paper": "#e5e0d8",
+        "marker-red": "#ff4d4d",
+        "pen-blue": "#2d5da1",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -62,6 +68,14 @@ const config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        wobbly: "255px 15px 225px 15px / 15px 225px 15px 255px",
+        wobblyMd: "15px 225px 15px 255px / 255px 15px 225px 15px",
+        wobblySm: "255px 5px 225px 5px / 5px 225px 5px 255px",
+      },
+      boxShadow: {
+        hard: "4px 4px 0px 0px #2d2d2d",
+        "hard-sm": "2px 2px 0px 0px #2d2d2d",
+        "hard-lg": "8px 8px 0px 0px #2d2d2d",
       },
       keyframes: {
         "accordion-down": {

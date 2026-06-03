@@ -19,6 +19,7 @@ export default function Projects() {
   })
 
   const projects = [
+    /*
     {
       title: "Rest API Laravel - Backend",
       description:
@@ -39,6 +40,7 @@ export default function Projects() {
       codeLink: "https://github.com/0xilham/rest-api-laravel",
       category: "web",
     },
+    */
     {
       title: "Bank Recycle Waste - Web3 dApp",
       description:
@@ -60,6 +62,7 @@ export default function Projects() {
       codeLink: "https://github.com/0xilham/blockchain-bank-recycle-waste",
       category: "web",
     },
+    /*
     {
       title: "Optimization Rainfall Prediction Model - AI",
       description: "An AI model using Long Short-Term Memory (LSTM) to improve rainfall prediction accuracy.",
@@ -69,6 +72,8 @@ export default function Projects() {
       codeLink: "https://medikom.iocspublisher.org/index.php/JTI/article/view/942/87",
       category: "ai",
     },
+    */
+    /*
     {
       title: "ADAB: The Sins Of Trash - Game 2D",
       description: "A 2D adventure game developed with Unity, featuring dynamic gameplay and immersive storytelling.",
@@ -79,6 +84,7 @@ export default function Projects() {
       codeLink: "https://github.com/Game-Dev-Group-6/GDK6",
       category: "game",
     },
+    */
     {
       title: "Purrfect Donations - Web3 dApp",
       description:
@@ -117,7 +123,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-6 sm:px-20 lg:px-20">
-        <h2 className="section-title text-center text-3xl font-bold mb-8">Projects</h2>
+        <h2 className="section-title text-center mb-12">Projects</h2>
 
         <Tabs defaultValue="all" className="mx-auto" onValueChange={setActiveTab}>
           <div className="flex justify-center mb-6 overflow-x-auto pb-2 no-scrollbar">
@@ -126,17 +132,17 @@ export default function Projects() {
                 All
               </TabsTrigger>
               <TabsTrigger value="web" className="px-3 py-1.5 whitespace-nowrap">
-                Web
+                Web2 & Web3
               </TabsTrigger>
-              <TabsTrigger value="game" className="px-3 py-1.5 whitespace-nowrap">
+              {/* <TabsTrigger value="game" className="px-3 py-1.5 whitespace-nowrap">
                 Game
-              </TabsTrigger>
+              </TabsTrigger> */}
               <TabsTrigger value="mobile" className="px-3 py-1.5 whitespace-nowrap">
                 Mobile
               </TabsTrigger>
-              <TabsTrigger value="ai" className="px-3 py-1.5 whitespace-nowrap">
+              {/* <TabsTrigger value="ai" className="px-3 py-1.5 whitespace-nowrap">
                 AI/ML
-              </TabsTrigger>
+              </TabsTrigger> */}
             </TabsList>
           </div>
 
@@ -149,7 +155,7 @@ export default function Projects() {
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="overflow-hidden h-full flex flex-col card-hover">
+                  <Card decoration="tape" className={`overflow-hidden h-full flex flex-col ${index % 2 === 0 ? "rotate-1 hover:-rotate-1" : "-rotate-1 hover:rotate-1"}`}>
                     {/* ANCHOR Img project <div className="relative h-48 overflow-hidden">
                       <Image
                         src={project.image || "/placeholder.svg"}
@@ -159,9 +165,9 @@ export default function Projects() {
                         priority={false}
                       />
                     </div> */}
-                    <CardContent className="pt-4 flex-grow">
-                      <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{project.description}</p>
+                    <CardContent className="pt-8 flex-grow">
+                      <h3 className="text-2xl font-bold mb-2 font-kalam">{project.title}</h3>
+                      <p className="text-pencil/80 font-patrick-hand text-lg mb-4">{project.description}</p>
                       <div className="flex flex-wrap gap-2">
                         {project.tags.slice(0, 5).map((tag, i) => (
                           <Badge key={i} variant="secondary" className="text-xs">
@@ -175,7 +181,7 @@ export default function Projects() {
                         )}
                       </div>
                     </CardContent>
-                    <CardFooter className="border-t pt-3">
+                    <CardFooter className="border-t-[3px] border-pencil border-dashed pt-4">
                       <div className="flex space-x-2 w-full">
                         <Button variant="outline" size="sm" className="flex-1">
                           <Link href={project.demoLink} className="flex items-center justify-center w-full">
@@ -199,14 +205,14 @@ export default function Projects() {
         </Tabs>
 
         <div className="text-center mt-12">
-          <Button>
+          <Button className="-rotate-2">
             <Link
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/0xilham"
               className="flex items-center"
             >
-              <Code className="h-4 w-4 mr-2" /> View All Projects
+              <Code className="h-5 w-5 mr-2" /> View All Projects
             </Link>
           </Button>
         </div>

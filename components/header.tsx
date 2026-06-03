@@ -1,11 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ModeToggle } from "./mode-toggle"
 import { usePathname } from "next/navigation"
-import { useRef } from "react"
+import { usePathname } from "next/navigation"
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -71,29 +70,28 @@ export default function Header() {
     <>
       {/* Desktop Header */}
       <header
-        className={`fixed top-0 w-full z-50 transition-all duration-300 md:block hidden ${isScrolled ? "bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+        className={`fixed top-0 w-full z-50 transition-all duration-300 md:block hidden ${isScrolled ? "bg-paper/90 backdrop-blur-md shadow-hard-sm border-b-[3px] border-pencil" : "bg-transparent"
           }`}
       >
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-20 xl:px-32">
           <div className="flex justify-between items-center py-4">
-            <Link href="/" className="text-xl font-bold font-poppins">
-              <span className="gradient-text">Ilham</span>
-              <span className="dark:text-white">.dev</span>
+            <Link href="/" className="text-3xl font-bold font-kalam -rotate-2 hover:rotate-0 transition-transform">
+              <span className="text-marker-red">Ilham</span>
+              <span className="text-pencil">.dev</span>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="flex items-center space-x-6">
+            <nav className="flex items-center space-x-6 font-patrick-hand text-xl">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-sm font-medium text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
+                  className="font-bold text-pencil hover:text-marker-red transition-colors hover:-translate-y-1 inline-block"
                 >
                   {item.name}
                 </Link>
               ))}
-              <ModeToggle />
-              <Button className="bg-primary hover:bg-primary/90">
+              <Button className="bg-white text-pencil border-[3px] border-pencil shadow-hard hover:bg-marker-red hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-hard-hover -rotate-2">
                 <Link href="#contact">Hire Me</Link>
               </Button>
             </nav>
@@ -102,70 +100,24 @@ export default function Header() {
       </header>
 
       {/* Mobile Bottom Navigation */}
-      <div className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[400px]">
-        {/* Floating Action Button (Mode Toggle) */}
-        <div className="absolute -top-8 left-1/2 -translate-x-1/2 z-10">
-          <div
-            className="bg-primary rounded-full p-1 shadow-lg"
-            onClick={(e) => {
-              const target = e.currentTarget;
-              target.classList.add("spin-animation");
-              setTimeout(() => target.classList.remove("spin-animation"), 1000);
-            }}
-          >
-            <ModeToggle className="text-white rounded-full" />
-          </div>
-        </div>
-
+      <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[400px]">
         {/* Navigation Bar */}
-        <div className="relative w-full h-14">
-          <svg
-            className="absolute top-0 left-0 w-full h-full rounded-3xl"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,0 Q40,0 39,0 ,Q50,80, 61,0, Q100,0 100,0 L100,100 L0,100 Z"
-              fill="currentColor"
-              className="text-blue-800 dark:text-gray-800"
-            />
-          </svg>
-
-          <div className="absolute top-0 left-0 w-full h-full flex justify-around items-center text-white px-4">
+        <div className="relative w-full rounded-wobblyMd border-[3px] border-pencil bg-white shadow-hard h-16 flex items-center">
+          <div className="absolute top-0 left-0 w-full h-full flex justify-around items-center text-pencil px-2">
             <Link href="#home" onClick={() => setActiveNav("#home")}
-              className={`flex flex-col items-center text-xs transition-colors ${activeNav === "#home" ? "text-purple-500" : "text-white"
+              className={`flex flex-col items-center text-xs transition-colors font-patrick-hand text-lg ${activeNav === "#home" ? "text-marker-red font-bold" : "text-pencil"
                 }`}>
-              <svg className="w-5 h-5"
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+              <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
               </svg>
-              <span className="text-xs mt-1">Home</span>
+              <span className="mt-1">Home</span>
             </Link>
 
             <Link href="#skills" onClick={() => setActiveNav("#skills")}
-              className={`flex flex-col items-center text-xs transition-colors ${activeNav === "#skills" ? "text-purple-500" : "text-white"
+              className={`flex flex-col items-center text-xs transition-colors font-patrick-hand text-lg ${activeNav === "#skills" ? "text-marker-red font-bold" : "text-pencil"
                 }`}>
-              <svg className="w-5 h-5"
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+              <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"></path>
                 <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path>
                 <path d="M12 2v2"></path>
@@ -177,52 +129,29 @@ export default function Header() {
                 <path d="M14 12h8"></path>
                 <path d="M2 12h2"></path>
               </svg>
-              <span className="text-xs mt-1">Skills</span>
+              <span className="mt-1">Skills</span>
             </Link>
 
-            {/* Empty space for the center button */}
-            <div className="w-10"></div>
-
             <Link href="#projects" onClick={() => setActiveNav("#projects")}
-              className={`flex flex-col items-center text-xs transition-colors ${activeNav === "#projects" ? "text-purple-500" : "text-white"
+              className={`flex flex-col items-center text-xs transition-colors font-patrick-hand text-lg ${activeNav === "#projects" ? "text-marker-red font-bold" : "text-pencil"
                 }`}>
-              <svg className="w-5 h-5"
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+              <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
                 <path d="M8 21h8"></path>
                 <path d="M12 17v4"></path>
                 <path d="M8 7h8"></path>
                 <path d="M8 11h8"></path>
               </svg>
-              <span className="text-xs mt-1">Projects</span>
+              <span className="mt-1">Projects</span>
             </Link>
 
             <Link href="#contact" onClick={() => setActiveNav("#contact")}
-              className={`flex flex-col items-center text-xs transition-colors ${activeNav === "#contact" ? "text-purple-500" : "text-white"
+              className={`flex flex-col items-center text-xs transition-colors font-patrick-hand text-lg ${activeNav === "#contact" ? "text-marker-red font-bold" : "text-pencil"
                 }`}>
-              <svg className="w-5 h-5"
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+              <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
               </svg>
-              <span className="text-xs mt-1">Contact</span>
+              <span className="mt-1">Contact</span>
             </Link>
           </div>
         </div>
