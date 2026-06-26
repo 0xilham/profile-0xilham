@@ -15,7 +15,7 @@ const navItems = [
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const sectionIds = ["#home", "#projects", "#skills", "#contact"]
+  const sectionIds = ["#home", "#experience", "#projects", "#skills", "#contact"]
   const [activeNav, setActiveNav] = useState("")
   const observerRef = useRef<IntersectionObserver | null>(null)
   useEffect(() => {
